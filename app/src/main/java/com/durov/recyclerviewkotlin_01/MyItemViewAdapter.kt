@@ -15,13 +15,11 @@ class MyItemViewAdapter(
 )
     :RecyclerView.Adapter<MyItemViewAdapter.ViewHolder>(){
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(
             LayoutInflater.from(context).inflate(R.layout.item_view, parent, false),
             itemClick
         )
-
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         holder.bindModel(items[position])
