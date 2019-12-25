@@ -11,8 +11,8 @@ import kotlinx.android.synthetic.main.item_view.view.*
 class MyItemViewAdapter(
     private val items:ArrayList<String>,
     private val context: Context,
-    private val itemClick: (String)-> Unit
-    )
+    private val itemClick: (String) -> Unit
+)
     :RecyclerView.Adapter<MyItemViewAdapter.ViewHolder>(){
 
 
