@@ -16,25 +16,24 @@ class MyItemViewAdapter(
     :RecyclerView.Adapter<MyItemViewAdapter.ViewHolder>(){
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view,parent,false),
-            itemClick)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
+        ViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.item_view, parent, false),
+            itemClick
+        )
 
-    override fun onBindViewHolder(holder : ViewHolder, position: Int) {
-       holder.bindModel(items[position])
-    }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
+        holder.bindModel(items[position])
+
+    override fun getItemCount() = items.size
 
     inner class ViewHolder(itemView: View,
         val itemClick:(String)->Unit): RecyclerView.ViewHolder(itemView){
         fun bindModel(model: String) {
             with(model) {
                 itemView.setOnClickListener { itemClick(this) }
-                itemView.textView.text = model
+                itemView.textView.text = this
             }
         }
     }

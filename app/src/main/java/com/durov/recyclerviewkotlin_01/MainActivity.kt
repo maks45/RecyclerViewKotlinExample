@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initList(){
         for(i in 0..100){
-            list.add(i.toString())
+            list.add("Item number $i")
         }
     }
 }
